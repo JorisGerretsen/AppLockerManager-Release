@@ -1,0 +1,5 @@
+# Ignore local binaries and release zip files from git tree (use GitHub Releases instead)
+*.zip
+*.tmp
+*.log
+
