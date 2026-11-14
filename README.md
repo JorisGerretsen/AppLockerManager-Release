@@ -1,8 +1,8 @@
 # AppLocker Management Platform
 
-[![Download Latest Release](https://img.shields.io/badge/Download-Latest%20Version%20(v2.0)-blue?style=for-the-badge&logo=github)](https://github.com/JorisGerretsen/AppLockerManager-Release/releases/tag/v2.0)
+[![Download Latest Release](https://img.shields.io/badge/Download-Latest%20Version%20(v2.1)-blue?style=for-the-badge&logo=github)](https://github.com/JorisGerretsen/AppLockerManager-Release/releases/tag/v2.1.0)
 
-> **[🚀 Click here to download the latest release (v2.0)](https://github.com/JorisGerretsen/AppLockerManager-Release/releases/tag/v2.0)**
+> **[🚀 Click here to download the latest release (v2.1.0)](https://github.com/JorisGerretsen/AppLockerManager-Release/releases/tag/v2.1.0)**
 
 A modern, powerful graphical management platform and automation tool for **Microsoft AppLocker** across Active Directory domains and standalone Windows servers.
 
@@ -15,11 +15,19 @@ Designed specifically for system administrators, security engineers, and RDS / C
 - **Live Active Directory GPO Integration:**
   - Real-time reading and writing to domain GPOs using direct SYSVOL parsing (`Registry.pol`) and LDAP fallbacks.
   - Automatic detection of enforcement modes (*AuditOnly* / *Enforced*) across all rule collections.
+  - **GPO Concurrency Protection:** Warns if another administrator has updated the GPO in SYSVOL before publishing.
 - **Standalone XML Mode:**
   - Build, edit, merge, and export standard AppLocker XML policies without requiring an Active Directory domain or GPO.
-- **Comprehensive Rule Generator:**
+- **Safety Validators & Lock-Out Safeguards:**
+  - Automatic validation preventing accidental system or administrator lockout before publishing to a live GPO.
+  - Detection of dangerous root paths (e.g., `C:\*` for Everyone) and user-writable subdirectories (`%WINDIR%\Temp`, `%WINDIR%\Tasks`).
+  - Pre-enforcement warnings for DLL and Script collections.
+- **Comprehensive Rule Generator & Modern UI:**
   - Full support for all AppLocker collections: **Executables (EXE)**, **Windows Installers (MSI)**, **Scripts (PS1, BAT, VBS, CMD, JS)**, **Packaged Apps (AppX / MSIX)**, and **DLLs**.
+  - Dynamic visual tab highlighting indicating the currently selected collection.
   - Rule condition generation based on **Publisher (Digital Signatures)**, **Path (with Windows environment variable support)**, or **File Hash (SHA256)**.
+- **Integrated Update Checker:**
+  - Automatic and manual update checking directly against GitHub Releases, notifying administrators when a new version is available.
 - **Real-time Event Monitor:**
   - Inspect AppLocker event logs (Event IDs 8002, 8003, 8004, 8006, 8007) from the local machine or remote servers.
   - Search by username (automatic Active Directory SID resolution), process name, and filter by Audit vs. Block events.
@@ -41,7 +49,7 @@ Designed specifically for system administrators, security engineers, and RDS / C
 - Administrative privileges on the local machine or domain permissions to manage Group Policy Objects.
 
 ### Quick Start:
-1. Download the latest version: **[AppLockerManager-v2.0.0.zip](https://github.com/JorisGerretsen/AppLockerManager-Release/releases/tag/v2.0)**.
+1. Download the latest version: **[AppLockerManager-v2.1.0.zip](https://github.com/JorisGerretsen/AppLockerManager-Release/releases/tag/v2.1.0)**.
 2. Extract the ZIP archive to your preferred directory (e.g., `C:\Tools\AppLockerManager`).
 3. Right-click **`Start-AppLockerManager.cmd`** and select **Run as Administrator** (or run `AppLockerManager.UI.exe` directly).
 
@@ -51,8 +59,8 @@ Designed specifically for system administrators, security engineers, and RDS / C
 
 AppLocker operates directly at the Windows kernel and OS security boundary. AppLocker Management Platform is designed with safeguards to prevent accidental system lockouts:
 - **Pending Changes Inspection:** All modifications are queued in a dedicated *Pending Changes* view before any policy is published or written to disk.
-- **Automatic Backups & Audit Trail:** Every deployment creates an automatic backup and logs the change to an internal audit trail.
-- **Baseline Protections:** Built-in safeguards protect against accidentally blocking standard Windows system binaries and administrative tools.
+- **Automatic Backups & Audit Trail:** Every deployment creates an automatic backup snapshot and logs the change to an internal audit trail.
+- **Lockout Prevention:** Enforces standard Windows system and administrative rules prior to publishing in `Enforced` mode.
 
 ---
 
