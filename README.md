@@ -9,6 +9,9 @@ A modern, powerful graphical management platform and automation tool for **Micro
 Designed specifically for system administrators, security engineers, and RDS / Citrix environments to design, audit, deploy, and maintain application whitelisting safely and efficiently via Group Policy Objects (GPO) or standalone XML policies.
 
 ---
+<img width="1722" height="1000" alt="image" src="https://github.com/user-attachments/assets/5f7c4716-2adb-48b0-8b24-4caffbae65c4" />
+<img width="1712" height="453" alt="image" src="https://github.com/user-attachments/assets/7191e81b-5ada-4cb2-ba0b-eb240621f3d8" />
+<img width="981" height="714" alt="image" src="https://github.com/user-attachments/assets/73f32520-ad2a-4e62-b46a-b0092d4bfca4" />
 
 ## 🚀 Key Features
 
