@@ -1,8 +1,8 @@
 # AppLocker Management Platform
 
-[![Download Latest Release](https://img.shields.io/badge/Download-Latest%20Version%20(v2.1)-blue?style=for-the-badge&logo=github)](https://github.com/JorisGerretsen/AppLockerManager-Release/releases/tag/v2.1.0)
+[![Download Latest Release](https://img.shields.io/badge/Download-Latest%20Version%20(v2.2)-blue?style=for-the-badge&logo=github)](https://github.com/JorisGerretsen/AppLockerManager-Release/releases/tag/v2.2.0)
 
-> **[🚀 Click here to download the latest release (v2.1.0)](https://github.com/JorisGerretsen/AppLockerManager-Release/releases/tag/v2.1.0)**
+> **[Click here to download the latest release (v2.2.0)](https://github.com/JorisGerretsen/AppLockerManager-Release/releases/tag/v2.2.0)**
 
 A modern, powerful graphical management platform and automation tool for **Microsoft AppLocker** across Active Directory domains and standalone Windows servers.
 
@@ -13,11 +13,11 @@ Designed specifically for system administrators, security engineers, and RDS / C
 <img width="1712" height="453" alt="image" src="https://github.com/user-attachments/assets/7191e81b-5ada-4cb2-ba0b-eb240621f3d8" />
 <img width="981" height="714" alt="image" src="https://github.com/user-attachments/assets/73f32520-ad2a-4e62-b46a-b0092d4bfca4" />
 
-## 🚀 Key Features
+## Key Features
 
 - **Live Active Directory GPO Integration:**
   - Real-time reading and writing to domain GPOs using direct SYSVOL parsing (`Registry.pol`) and LDAP fallbacks.
-  - Automatic detection of enforcement modes (*AuditOnly* / *Enforced*) across all rule collections.
+  - Automatic detection and preservation of enforcement modes (*AuditOnly* / *Enforced*) across all rule collections.
   - **GPO Concurrency Protection:** Warns if another administrator has updated the GPO in SYSVOL before publishing.
 - **Standalone XML Mode:**
   - Build, edit, merge, and export standard AppLocker XML policies without requiring an Active Directory domain or GPO.
@@ -39,12 +39,12 @@ Designed specifically for system administrators, security engineers, and RDS / C
   - Scan local or remote servers to discover installed software and rapidly generate tailored whitelists.
 - **Ivanti / RES Software Migration:**
   - Built-in importer for CSV and Building Block exports from Ivanti / RES Application Control.
-- **Multilingual Support:**
-  - Fully translated UI available in **English**, **Dutch**, and **German**.
+- **Multilingual Support & First-Run Setup:**
+  - Interactive first-launch language selector and fully translated UI available in **English**, **Dutch**, and **German**.
 
 ---
 
-## 📦 Requirements & Installation
+## Requirements & Installation
 
 ### System Requirements:
 - Windows 10 / 11 (Enterprise or Education editions recommended for AppLocker enforcement), or Windows Server 2016 / 2019 / 2022 / 2025.
@@ -52,13 +52,13 @@ Designed specifically for system administrators, security engineers, and RDS / C
 - Administrative privileges on the local machine or domain permissions to manage Group Policy Objects.
 
 ### Quick Start:
-1. Download the latest version: **[AppLockerManager-v2.1.0.zip](https://github.com/JorisGerretsen/AppLockerManager-Release/releases/tag/v2.1.0)**.
+1. Download the latest version: **[AppLockerManager-v2.2.0.zip](https://github.com/JorisGerretsen/AppLockerManager-Release/releases/tag/v2.2.0)**.
 2. Extract the ZIP archive to your preferred directory (e.g., `C:\Tools\AppLockerManager`).
 3. Right-click **`Start-AppLockerManager.cmd`** and select **Run as Administrator** (or run `AppLockerManager.UI.exe` directly).
 
 ---
 
-## 🔒 Safety & Governance
+## Safety & Governance
 
 AppLocker operates directly at the Windows kernel and OS security boundary. AppLocker Management Platform is designed with safeguards to prevent accidental system lockouts:
 - **Pending Changes Inspection:** All modifications are queued in a dedicated *Pending Changes* view before any policy is published or written to disk.
@@ -67,7 +67,7 @@ AppLocker operates directly at the Windows kernel and OS security boundary. AppL
 
 ---
 
-## 📬 Issues & Feedback
+## Issues & Feedback
 
 Found a bug or have a feature request?
 Feel free to open an issue in the **[Issues Tab](https://github.com/JorisGerretsen/AppLockerManager-Release/issues)**.
